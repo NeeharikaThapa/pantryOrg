@@ -1,59 +1,87 @@
-body {
-    font-family: Arial, sans-serif;
+/* Universal selector affecting all elements */
+* {
+    background-color: rgb(224, 251, 252);
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 header {
-    background-color: #4CAF50;
-    color: white;
+    width: 100%;
     padding: 15px;
+    background-color: rgb(93, 162, 113);
     text-align: center;
 }
 
-nav a {
+header h1 {
+    margin: 0;
     color: white;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
     margin: 0 10px;
     text-decoration: none;
+    color: white;
+    font-weight: bold;
 }
 
 .add-button {
     font-size: 24px;
     text-decoration: none;
+    color: white;
 }
 
 main {
     padding: 20px;
+    width: 100%;
+    max-width: 800px;
 }
 
 h2 {
     margin-top: 0;
+    text-align: center;
 }
 
 .filters {
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .food-items table {
-    width: 100%;
+    width: 80%;
     border-collapse: collapse;
 }
 
 .food-items th, .food-items td {
-    border: 1px solid #ddd;
+    border: 1px solid #000;
     padding: 8px;
+    text-align: center;
 }
 
 .food-items th {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #98C1D9;
 }
 
 .add-item-form, .edit-item-form {
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: rgb(247, 174, 245);
+    border: 1px solid #eac4c4;
     padding: 20px;
+    text-align: center;
 }
 
 form label {
@@ -63,5 +91,17 @@ form label {
 
 form input, form button {
     display: block;
-    margin-top: 5px;
+    margin: 10px auto;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #5DA271;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #3a7149;
 }
