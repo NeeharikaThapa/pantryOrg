@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="filters">
+    <h2>Filters</h2>
+    <form method="get">
+        <select name="filter_type">
+            <option value="location">Location</option>
+            <option value="food_type">Type of Food</option>
+            <option value="other_tags">Other Tags</option>
+            <option value="owner">Owner</option>
+            <option value="expiry">Expiry Date</option>
+        </select>
+        <input type="text" name="filter_value">
+        <button type="submit">Filter</button>
+    </form>
+</div>
+
+<div class="food-items">
+    <h2>Food Items</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Expiry Date</th>
+                <th>Owner</th>
+                <th>Location</th>
+                <th>Type of Food</th>
+                <th>Other Tags</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in food_items %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.expiry_date }}</td>
+                <td>{{ item.owner }}</td>
+                <td>{{ item.location }}</td>
+                <td>{{ item.food_type }}</td>
+                <td>{{ item.other_tags }}</td>
+                <td>
+                    <a href="{{ url_for('edit_item', item_id=item.id) }}">Edit</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.add-button {
+    font-size: 24px;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.filters {
+    margin-bottom: 20px;
+}
+
+.food-items table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.food-items th, .food-items td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.food-items th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.add-item-form, .edit-item-form {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+form input, form button {
+    display: block;
+    margin-top: 5px;
+}

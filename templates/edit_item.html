@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="edit-item-form">
+    <h2>Edit Food Item</h2>
+    <form method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ item.name }}" required><br>
+
+        <label for="expiry_date">Expiry Date:</label>
+        <input type="date" id="expiry_date" name="expiry_date" value="{{ item.expiry_date }}" required><br>
+
+        <label for="owner">Owner:</label>
+        <input type="text" id="owner" name="owner" value="{{ item.owner }}" required><br>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" value="{{ item.location }}" required><br>
+
+        <label for="food_type">Type of Food:</label>
+        <input type="text" id="food_type" name="food_type" value="{{ item.food_type }}" required><br>
+
+        <label for="other_tags">Other Tags (comma-separated):</label>
+        <input type="text" id="other_tags" name="other_tags" value="{{ item.other_tags }}"><br>
+
+        <button type="submit">Update Item</button>
+    </form>
+</div>
+{% endblock %}
