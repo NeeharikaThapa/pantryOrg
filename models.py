@@ -15,7 +15,8 @@ class FoodItem(Base):
     food_type = Column(String, nullable=False)
     other_tags = Column(String, nullable=True)
 
-# Database setup
+# Database setup: The Engine is a factory that can create new database connections for 
+# us, which also holds onto connections inside of a Connection Pool for fast reuse. 
 engine = create_engine('sqlite:///food_items.db')
 Base.metadata.create_all(engine)
 

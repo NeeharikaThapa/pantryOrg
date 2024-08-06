@@ -3,14 +3,14 @@
 {% block content %}
 <div class="filters">
 
-    <h2 >Filters</h2>
+    <h2>Filters</h2>
     <form method="get">
         <select name="filter_type">
-            <option value="location">Location</option>
-            <option value="food_type">Type of Food</option>
-            <option value="other_tags">Other Tags</option>
-            <option value="owner">Owner</option>
-            <option value="expiry">Expiry Date</option>
+            <option value="location" style="text-align: center;">Location</option>
+            <option value="food_type"style="text-align: center;">Type of Food</option>
+            <option value="other_tags"style="text-align: center;">Other Tags</option>
+            <option value="owner"style="text-align: center;">Owner</option>
+            <option value="expiry"style="text-align: center;">Expiry Date</option>
         </select>
         <input type="text" name="filter_value">
         <button type="submit">Filter</button>
@@ -19,8 +19,8 @@
 
 <div class="food-items">
     <h2>Food Items</h2>
-    <table>
-        <thead>
+    <table style="align-self: center;">
+        <thead style="align-self: center;">
             <tr>
                 <th>Name</th>
                 <th>Expiry Date</th>
