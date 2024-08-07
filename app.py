@@ -67,7 +67,7 @@ def add_item():
     # this template is rendered/loaded when adding items
     return render_template('add_item.html')
 
-# for editing existing food items in database
+
 @app.route('/edit/<int:item_id>', methods=['GET', 'POST'])
 
 def edit_item(item_id):
@@ -90,6 +90,14 @@ def edit_item(item_id):
 
     # this template is rendered/loaded when editing items
     return render_template('edit_item.html', item=item)
+
+@app.route('/delete/<int:item_id>', methods=['POST'])
+def delete_item(item_id):
+    item = session.query(FoodItem).get(item_id)
+    if item:
+        session.delete(item)
+        session.commit()
+    return redirect(url_for('home'))
 
 if __name__ == '__main__':
     app.run(debug=True)

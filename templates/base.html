@@ -2,24 +2,39 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Items Organization System</title>
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
-</head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 
+</head>
 
 <body>
 
     <header>
+        <div>
+
         <h1>Food Items Organization System</h1>
+
         <nav>
-            <a href="{{ url_for('home') }}">Home</a>
-            <a href="{{ url_for('add_item') }}" class="add-button">+</a>
+
+            <form action="{{ url_for('home') }}" method="get" class="nav-button">
+                <button type="submit">Home</button>
+            </form>
+
+            <form action="{{ url_for('add_item') }}" class="nav-button" method="get">
+                <button type="submit"> + </button>
+            </form>
+
         </nav>
+        </div>
+
     </header>
+
     <main>
         {% block content %}{% endblock %}
     </main>
+
 </body>
 </html>

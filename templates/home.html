@@ -2,7 +2,6 @@
 
 {% block content %}
 <div class="filters">
-
     <h2>Filters</h2>
     <form method="get">
         <select name="filter_type">
@@ -13,7 +12,12 @@
             <option value="expiry"style="text-align: center;">Expiry Date</option>
         </select>
         <input type="text" name="filter_value">
-        <button type="submit">Filter</button>
+        <nav>
+            <form action="{{ url_for('home') }}" method="get" style="display:inline;">
+                <button type="submit">Show All</button>
+            </form>
+            <button type="submit">Filter</button>
+        </nav>
     </form>
 </div>
 
@@ -41,7 +45,15 @@
                 <td>{{ item.food_type }}</td>
                 <td>{{ item.other_tags }}</td>
                 <td>
-                    <a href="{{ url_for('edit_item', item_id=item.id) }}">Edit</a>
+
+                    <form action="{{ url_for('edit_item', item_id=item.id) }}" method="get" style="display:inline;">
+                        <button type="submit">Edit</button>
+                    </form>
+
+                    <form action="{{ url_for('delete_item', item_id=item.id) }}" method="post" style="display:inline;">
+                        <button type="submit" onclick="return confirm('Are you sure you want to delete this item?');">Delete</button>
+                    </form>
+                    
                 </td>
             </tr>
             {% endfor %}
